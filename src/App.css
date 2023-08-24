@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-content .active{
+    display: block;
+}
+
+.bg-navbar{
+    background-color: #DA2A1C;
+    border-top: 10px solid #AA0000;
+}
+
+.navbar-brand h3{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.form-search{
+    width: 500px;
+}
+
+.btn-search{
+    background: #404f5a !important;
+}
+
+.main-content .export-ex{
+    line-height: 64px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.main-content .nav-menu{
+    background-color: #4c4b4a;
+}
+
+.main-content .nav-menu .nav-item{
+    background-color: #565554;
+    border-right: 1px solid #4c4b4a;
+}
+
+.main-content .nav-menu .nav-item:hover {
+    caret-color: rgb(255, 255, 255);
+    border-right: 1px solid #4c4b4a;
+}
+
+.main-content .nav-pills{
+    height: 60px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #2A2525 !important;
+    font-size: 14px;
+}
+
+.nav-pills .nav-link {
+    font-size: 14px;
+    color: #ffffff;
+    height: 60px;
+}
+
+.nav-pills .nav-link:hover {
+    color: #ffffff;
+}
+
+.main-content .nav-item .i-icon{
+    font-size: 24px;
+}
+
+.nav-link:hover {
+    color: var(--bs-nav-link-hover-color);
+}
+
+/*Sidebar*/
+.main-content .side-bar{
+    width: 305px !important;
+    border-right: 1px solid #e0e0e0;
+}
+
+.menu-left-container {
+    background-color: #fff;
+}
+
+.menu-left-container .side-menu {
+    height: 100%;
+    padding: 15px 10px;
+}
+
+.side-menu .title-side-menu {
+    display: flex;
+    color: #535353;
+    font-size: 14px;
+}
+
+.title-side-menu h4 {
+    margin-right: 5px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.side-menu .menu-list {
+    padding: 0 5px;
+}
+
+.menu-list h3 .ro-90 {
+    transform: rotate(90deg);
+}
+
+.list-ul {
+    list-style-type: none;
+    display: none;
+}
+
+.main-container .active {
+    display: block;
+}
+
+.side-menu .menu-list .side-list-title{
+    font-size: 21px;
+    cursor: pointer;
+    padding: 5px 0;
+    border-bottom: 1px solid #c9c9c9;
+    font-weight: bold;
+}
+
+.side-menu .menu-list .side-list-title span{
+  padding-left: 10px;
+}
+
+.menu-list .list-ul li {
+    padding: 10px 0 5px 0;
+    line-height: 16px;
+    font-size: 16px;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.list-ul li input {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}
+
+/*CONTENT-LEFT*/
+.content-left .total-results{
+    color: #000000;
+    font-size: 16.38px;
+    font-weight: 700;
+    line-height: 24.57px;
+}
+
+.card-img .card-img-top {
+    object-fit: cover;
+}
+
+.break-line {
+    height: 2px;
+    width: 100%;
+    background-color: #c9c9c9;
+    margin: 4px 0;
+}
+
+/*Tab 1*/
+.card-body .species-info .species-character{
+    color: #080100;
+    font-size: 14px;
+}
+
+.card-body .species-info .species-name{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(8, 1, 0);
+}
+
+.card-body .species-info .science-name{
+    font-size: 16px;
+    color: #080100;
+}
+
+.species-status .icon-status{
+    color: rgb(208, 213, 214);
+}
+
+.red-list .pink {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #ffffff;
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+.red-list .red {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #ffffff;
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+.btn-see-more{
+    width: 88px !important;
+    margin: 0 auto;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    background-color: unset;
+}
+
+/*Tab 2*/
+.table-content tr th{
+    font-size: 12px;
+    font-weight: 500;
+    color: #464e5f;
+}
+
+.table-content tr td {
+    font-size: 14px;
+    color: #000000DE;
+    padding: 0 8px;
+    height: 48px;
+    line-height: 48px;
+}
+
+/*Footer*/
+footer{
+    background-color: #7b1b0e;
+    width: 100%;
+    height: 50px;
+}
+
+.copy-right{
+    margin: 0 auto;
+    width: 11%;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 50px;
+}
+
+/* Paginate */
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+  
+  .pagination li.active {
+    background-color: #DA2A1C;
+    color: white;
+    border: 1px solid #DA2A1C;
+  }
+  
+  .pagination li:hover:not(.active) {background-color: #ddd;}
+
+  .dang_nhap a{
+    color:#ffffff;
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 1.25px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  /* Lazyload */
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Thêm kiểu này để căn giữa dòng */
+  }
+  
+  /* .loading-spinner .loader {
+   
+  } */

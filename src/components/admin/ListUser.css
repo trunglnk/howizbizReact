@@ -1,0 +1,304 @@
+.quanli-user nav.navbar.navbar-light.bg-light {
+  border: 2px solid #ccc;
+}
+
+.quanli-user .list-group-item.active {
+  background-color: #e0ecfd !important;
+  color: #5f6368;
+}
+
+.quanli-user .input .disabled {
+  background-color: #e7e9eb;
+}
+
+.quanli-user .input-elevated {
+  font-size: 16px;
+  line-height: 1.5;
+  border: none;
+  background: #ffffff;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><path fill='%23838D99' d='M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z'></path></svg>");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  background-size: 20px 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  width: 300px;
+  padding: 0.5em 1em 0.5em 2.5em;
+}
+
+.quanli-user .input-elevated::placeholder {
+  color: #838d99;
+}
+
+.quanli-user .input-elevated:focus {
+  outline: none;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.quanli-user .list-filter {
+  background: rgb(243, 246, 249);
+}
+
+.quanli-user .navbar-brand.account img {
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.quanli-user .date-messages {
+  color: #00000099;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: left;
+  padding: 10px 0 0 10px;
+}
+
+/*CSS BUTTON ADD*/
+.quanli-user .button-add {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #da2a1c;
+  background-color: #da2a1c;
+}
+
+.quanli-user .button-add,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.quanli-user .button-add .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.quanli-user .button-add .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #da2a1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quanli-user .button-add .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.quanli-user .button-add:hover {
+  background: #da2a1c;
+}
+
+.quanli-user .button-add:hover .button__text {
+  color: transparent;
+}
+
+.quanli-user .button-add:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.quanli-user .button-add:active .button__icon {
+  background-color: #2e8644;
+}
+
+.quanli-user .button-add:active {
+  border: 1px solid #2e8644;
+}
+
+.quanli-user .btn-action {
+  color: #da2a1c;
+  border: none;
+  background: no-repeat;
+  font-size: 20px;
+}
+/* END CSS BUTTON ADD*/
+
+/*CSS MODAL ADD*/
+.quanli-user .modal-header {
+  background-color: #da2a1c;
+  color: #fff;
+}
+
+.quanli-user .modal-header.delete {
+  background-color: #dc3545 !important;
+  color: #fff;
+}
+
+.quanli-user .card-form {
+  padding: 0.5rem 1rem 0;
+}
+
+.quanli-user .input {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 1.5rem;
+  & + .input {
+    margin-top: 0.5rem;
+  }
+}
+
+.quanli-user .input-label {
+  color: #8597a3;
+  position: absolute;
+  top: 1.5rem;
+  transition: 0.25s ease;
+}
+
+.quanli-user .input-field {
+  border: 0;
+  z-index: 1;
+  background-color: transparent;
+  border-bottom: 2px solid #eee;
+  font: inherit;
+  font-size: 1.125rem;
+  padding: 0.25rem 0;
+  border-radius: unset;
+  &:focus,
+  &:valid {
+    outline: 0;
+    border-bottom-color: #3aa856;
+    & + .input-label {
+      color: #6658d3;
+      transform: translateY(-1.5rem);
+    }
+  }
+}
+/*END CSS MODAL ADD*/
+
+/*CSS TABLE*/
+.quanli-user .role {
+  padding: 6px;
+  color: #3c4043;
+  font-weight: 600;
+  display: inline-block;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.quanli-user .table {
+  font-size: 14px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/*END CSS TABLE*/
+
+/*INPUT ACTIVE TABLE*/
+.quanli-user .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.quanli-user .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.quanli-user .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.quanli-user .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.quanli-user input:checked + .slider {
+  background-color: #da2a1c;
+}
+
+.quanli-user input:focus + .slider {
+  box-shadow: 0 0 1px #32cd32;
+}
+
+.quanli-user input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.quanli-user .slider.round {
+  border-radius: 34px;
+}
+
+.quanli-user .slider.round:before {
+  border-radius: 50%;
+}
+
+/*CSS PROFILE*/
+.quanli-user .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0px auto;
+}
+
+.quanli-user .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quanli-user .add-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.form-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px; /* Điều chỉnh kích thước tối đa của select */
+    background-color: #fff;
+    color: #333;
+  }
+
+  .form-select option {
+    background-color: #fff;
+    color: #333;
+  }
