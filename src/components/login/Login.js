@@ -60,10 +60,11 @@ const Login = () => {
         navigate("/user");
         localStorage.setItem("token", response.data.access_token);
         console.log(localStorage.getItem("token"));
-      } else {
-        console.error("Login error:", response);
-        alert("Tên đăng nhập hoặc mật khẩu không đúng.");
-      }
+      } 
+      // else {
+      //   console.error("Login error:", response);
+      //   alert("Tên đăng nhập hoặc mật khẩu không đúng.");
+      // }
     } catch (error) {
       console.error("Login error:", error);
       alert("Tên đăng nhập hoặc mật khẩu không đúng.");

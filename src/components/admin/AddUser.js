@@ -9,7 +9,6 @@ const getRoleAdd = async (token) => {
       },
     });
 
-    // console.log(response.data);
     return response;
   } catch (error) {
     console.log(error);
@@ -20,11 +19,68 @@ const AddUser = () => {
   const [listRoleAdd, setListRoleAdd] = useState([]);
   const token = localStorage.getItem("token");
 
+  // State value input
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [selectedRoles, setSelectedRoles] = useState([]);
+
+  // State validate
   const [nameError, setNameError] = useState("");
   const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [roleError, setRoleError] = useState("");
+
+  const validateInputs = () => {
+    setNameError("");
+    setUsernameError("");
+    setEmailError("");
+    setPasswordError("");
+    setConfirmPasswordError("");
+    setRoleError("");
+
+    let isValid = true;
+
+    if (!name) {
+      setNameError("Trường tên không được bỏ trống");
+      isValid = false;
+    }
+
+    if (!username) {
+      setUsernameError("Trường tên đăng nhập không được bỏ trống");
+      isValid = false;
+    }
+
+    if (!email) {
+      setEmailError("Trường email không được bỏ trống");
+      isValid = false;
+    }
+
+    if (!password) {
+      setPasswordError("Trường mật khẩu không được bỏ trống");
+      isValid = false;
+    } else if (password.length < 8) {
+      setPasswordError("Trường mật khẩu phải có ít nhất 8 ký tự");
+      isValid = false;
+    }
+
+    if (password !== confirmPassword) {
+      setConfirmPasswordError("Mật khẩu xác nhận không khớp");
+      isValid = false;
+    }
+
+    if (selectedRoles.length === 0) {
+      setRoleError("Quyền người dùng không được để trống");
+      isValid = false;
+    }
+
+    return isValid;
+  };
 
   useEffect(() => {
     if (token) {
@@ -36,56 +92,15 @@ const AddUser = () => {
   }, [token]);
 
   const handleAddUser = () => {
-    const url = "http://wlp.howizbiz.com/api/users"; // Replace with the appropriate endpoint
-    const name = document.getElementById("nameUser").value;
-    const username = document.getElementById("usernameUser").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("mobile").value;
-    const password = document.getElementById("pwd").value;
-    const confirmPassword = document.getElementById("confirm-pwd").value;
+    const url = "http://wlp.howizbiz.com/api/users";
 
-    const roleIds = Array.from(
-      document.getElementById("cboQuyen").selectedOptions
-    ).map((option) => option.value);
+    // const roleIds = Array.from(
+    //   document.getElementById("cboQuyen").selectedOptions
+    // ).map((option) => option.value);
 
-    // Kiểm tra mật khẩu và mật khẩu xác nhận
-    if (password !== confirmPassword) {
-      alert("Mật khẩu xác nhận không khớp");
+    if (!validateInputs()) {
       return;
     }
-
-    // Validation checks
-    if (!name) {
-      setNameError("Trường tên không được bỏ trống");
-      return;
-    }
-
-    if (!username) {
-      setUsernameError("Trường tên đăng nhập không được bỏ trống");
-      return;
-    }
-
-    if (!email) {
-      setEmailError("Trường email không được bỏ trống");
-      return;
-    }
-
-    if (!password) {
-      setPasswordError("Trường mật khẩu không được bỏ trống");
-      return;
-    }
-
-    if (roleIds.length === 0) {
-      setRoleError("Quyền người dùng không được để trống");
-      return;
-    }
-
-    // Clear error messages if no validation errors
-    setNameError("");
-    setUsernameError("");
-    setEmailError("");
-    setPasswordError("");
-    setRoleError("");
 
     const newUser = {
       name: name,
@@ -94,7 +109,7 @@ const AddUser = () => {
       mobile: phone,
       password: password,
       password_confirmation: confirmPassword,
-      role_ids: roleIds,
+      role_ids: selectedRoles,
     };
 
     axios
@@ -106,7 +121,6 @@ const AddUser = () => {
       })
       .then((response) => {
         console.log(response.data);
-        // Call a function to refresh user data or update UI accordingly
         alert("Thêm mới User thành công!");
       })
       .catch((error) => {
@@ -138,6 +152,8 @@ const AddUser = () => {
                   id="nameUser"
                   name="name"
                   required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <label className="input-label">Tên hiển thị</label>
                 <div className="error-message mt-2">{nameError}</div>
@@ -150,6 +166,8 @@ const AddUser = () => {
                   id="usernameUser"
                   name="username"
                   required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
                 <label className="input-label">Tên đăng nhập</label>
                 <div className="error-message mt-2">{usernameError}</div>
@@ -162,6 +180,8 @@ const AddUser = () => {
                   id="email"
                   name="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <label className="input-label">Email</label>
                 <div className="error-message mt-2">{emailError}</div>
@@ -174,6 +194,8 @@ const AddUser = () => {
                   id="mobile"
                   name="mobile"
                   required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
                 <label className="input-label">Điện thoại</label>
               </div>
@@ -185,25 +207,42 @@ const AddUser = () => {
                   id="pwd"
                   name="pwd"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <label className="input-label">Mật khẩu</label>
                 <div className="error-message mt-2">{passwordError}</div>
               </div>
 
-              <div className="input">
+              <div className="input flex-column">
                 <input
                   type="password"
                   className="input-field"
                   id="confirm-pwd"
                   name="confirm-pwd"
                   required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
                 <label className="input-label">Xác nhận mật khẩu</label>
+                <div className="error-message mt-2">{confirmPasswordError}</div>
               </div>
 
               <label className="pt-3">Quyền</label>
               <div className="input pt-0 flex-column">
-                <select name="roles" id="cboQuyen" multiple>
+                <select
+                  name="roles"
+                  id="cboQuyen"
+                  multiple
+                  value={selectedRoles}
+                  onChange={(e) =>
+                    setSelectedRoles(
+                      [...e.target.options]
+                        .filter((option) => option.selected)
+                        .map((option) => option.value)
+                    )
+                  }
+                >
                   {listRoleAdd.map((role) => (
                     <option key={role.id} value={role.id}>
                       {role.name}
